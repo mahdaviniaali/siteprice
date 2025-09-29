@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مقایسه پلن‌های فروشگاه</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #6366f1;
+      --success: #10b981;
+      --danger: #ef4444;
+      --warning: #f59e0b;
+      --gray: #64748b;
+      --border: #e2e8f0;
+    }
+
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background: #f9fafb;
+      color: #1e293b;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+      color: #1e293b;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--gray);
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,.08);
+      margin-bottom: 30px;
+    }
+
+    thead th {
+      background: var(--primary);
+      color: white;
+      padding: 20px;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    thead th:first-child {
+      background: #1e293b;
+    }
+
+    tbody th {
+      background: #f3f4f6;
+      text-align: right;
+      padding: 14px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      font-size: 0.95rem;
+      width: 200px;
+    }
+
+    td {
+      text-align: center;
+      padding: 14px;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    td i {
+      font-size: 1.2rem;
+    }
+
+    .yes { color: var(--success); }
+    .no { color: var(--danger); }
+    .limited { color: var(--warning); }
+
+    .category-header {
+      background: #e5e7eb !important;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 0.85rem;
+    }
+
+    .price-row {
+      background: #f8fafc;
+      font-weight: 600;
+    }
+
+    .price-row td {
+      font-size: 1.2rem;
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #4f46e5;
+      transform: translateY(-1px);
+    }
+
+    .plan-1 .btn { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    .plan-2 .btn { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+    .plan-3 .btn { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+
+    @media (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead { display: none; }
+      tr { 
+        margin-bottom: 20px; 
+        border: 1px solid var(--border); 
+        border-radius: 8px; 
+        background: #fff; 
+        padding: 15px;
+      }
+      td, th { 
+        border: none; 
+        padding: 10px 15px; 
+        text-align: right; 
+        display: block;
+        width: 100%;
+      }
+      th {
+        background: #f3f4f6;
+        font-weight: 600;
+        margin-bottom: 10px;
+        border-radius: 6px;
+      }
+      td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--gray);
+        display: block;
+        margin-bottom: 5px;
+      }
+    }
+  </style>
+<body>
+
+  <h1>پلن‌های فروشگاه آنلاین</h1>
+  <p class="subtitle">مقایسه کامل امکانات و ویژگی‌های پلن‌های مختلف برای راه‌اندازی فروشگاه اینترنتی</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>امکانات</th>
+        <th>پلن مینی‌مال</th>
+        <th>پلن استاندارد</th>
+        <th>پلن پریمیوم</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- صفحات اصلی -->
+      <tr>
+        <th class="category-header" colspan="4">صفحات اصلی</th>
+      </tr>
+            
+      <tr>
+        <th>صفحه اصلی (لیست محصولات، بنرها، دسته‌بندی‌ها)</th>
+        <td data-label="مینی‌مال">هیرو سکشن عادی + یک بنر استاتیک</td>
+        <td data-label="استاندارد">چند بنر + پنل ادمین + فیچرهای تشخیص پیمانکار</td>
+        <td data-label="پریمیوم">طراحی هیرو سکشن اختصاصی + دوتا فیچر ترجیه کارفرما</td>
+      </tr>
+            
+      <tr>
+        <th>صفحه دسته‌بندی‌ها (فیلتر و مرتب‌سازی)</th>
+        <td data-label="مینی‌مال">مرتب‌سازی پایه (جدید/قیمت)</td>
+        <td data-label="استاندارد">فیلترهای استاندارد + مرتب‌سازی</td>
+        <td data-label="پریمیوم">تمام فیلترها + مرتب‌سازی کامل</td>
+      </tr>
+            
+      <tr>
+        <th>صفحه محصول (عکس، توضیحات، قیمت، موجودی)</th>
+        <td data-label="مینی‌مال">تصویر اصلی + توضیحات متنی</td>
+        <td data-label="استاندارد">گالری عکس + جزئیات کامل</td>
+        <td data-label="پریمیوم">گالری + توضیحات مفصل + نمایش دقیق</td>
+      </tr>
+            
+      <!-- سبد خرید -->
+      <tr>
+        <th class="category-header" colspan="4">سبد خرید</th>
+      </tr>
+            
+      <tr>
+        <th>افزودن به سبد خرید</th>
+        <td data-label="مینی‌مال">دکمه افزودن + نمایش تعداد ساده</td>
+        <td data-label="استاندارد">افزودن/حذف/ویرایش + پیش‌نمایش سریع و بروز رسانی در چند دستگاه (بدون بلادرنگ)</td>
+        <td data-label="پریمیوم">تمامی امکانات همراه با لیست خرید</td>
+      </tr>
+            
+      <tr>
+        <th>صفحه پرداخت (checkout)</th>
+        <td data-label="مینی‌مال">فرم پرداخت پایه (یک روش)</td>
+        <td data-label="استاندارد">چند فیلد آدرس + درگاه‌های معمول</td>
+        <td data-label="پریمیوم">پرداخت کامل + چند روش + انتخاب ارسال</td>
+      </tr>
+            
+      <!-- کاربر و حساب کاربری -->
+      <tr>
+        <th class="category-header" colspan="4">کاربر و حساب کاربری</th>
+      </tr>
+            
+      <tr>
+        <th>ثبت‌نام / ورود (ایمیل، شماره موبایل یا سوشال لاگین)</th>
+        <td data-label="مینی‌مال">ورود با پسورد</td>
+        <td data-label="استاندارد">ورود با شماره تلفن (ثبت نام سریع)</td>
+        <td data-label="پریمیوم">ورود با شماره و/یا لاگین گوگل</td>
+      </tr>
+            
+      <tr>
+        <th>پروفایل کاربر (اطلاعات، آدرس‌ها، سفارش‌ها)</th>
+        <td data-label="مینی‌مال">اطلاعات پایه و تاریخچه ساده</td>
+        <td data-label="استاندارد">مدیریت چند آدرس + جزئیات سفارش</td>
+        <td data-label="پریمیوم">پروفایل کامل + چند آدرس + تاریخچه کامل</td>
+      </tr>
+            
+      <tr>
+        <th>مدیریت آدرس‌ها</th>
+        <td data-label="مینی‌مال">آدرس‌های ساده</td>
+        <td data-label="استاندارد">چند آدرس + انتخاب در پرداخت</td>
+        <td data-label="پریمیوم">چند آدرس + انتخاب آسان در checkout</td>
+      </tr>
+            
+      <tr>
+        <th>پیگیری سفارش‌ها (Order history + status)</th>
+        <td data-label="مینی‌مال">وضعیت‌های پایه</td>
+        <td data-label="استاندارد">وضعیت‌های دقیق + تاریخ‌ها</td>
+        <td data-label="پریمیوم">وضعیت‌های کامل + تاریخچه زمانی</td>
+      </tr>
+            
+      <!-- فرآیند خرید -->
+      <tr>
+        <th class="category-header" colspan="4">فرآیند خرید</th>
+      </tr>
+            
+      <tr>
+        <th>کد تخفیف / کوپن</th>
+        <td data-label="مینی‌مال"><i class="fas fa-times no"></i></td>
+        <td data-label="استاندارد">اعتبارسنجی ساده (درصد/مبلغ)</td>
+        <td data-label="پریمیوم">پیاده‌سازی کامل + اعتبارسنجی</td>
+      </tr>
+            
+      <tr>
+        <th>انتخاب روش پرداخت (درگاه بانکی/آنلاین)</th>
+        <td data-label="مینی‌مال">یک درگاه پایه</td>
+        <td data-label="استاندارد">چند درگاه رایج</td>
+        <td data-label="پریمیوم">چندین درگاه مطابق نیاز فروشگاه</td>
+      </tr>
+            
+      <tr>
+        <th>انتخاب روش ارسال (پست، پیک، …)</th>
+        <td data-label="مینی‌مال">۱-۲ روش ساده (پست/تحویل محلی)</td>
+        <td data-label="استاندارد">چند روش + نمایش هزینه</td>
+        <td data-label="پریمیوم">روش‌های قابل پیکربندی + هزینه بر اساس انتخاب</td>
+      </tr>
+            
+      <tr>
+        <th>صدور فاکتور / رسید</th>
+        <td data-label="مینی‌مال">رسید ساده + ایمیل</td>
+        <td data-label="استاندارد">فاکتور الکترونیک + ایمیل</td>
+        <td data-label="پریمیوم">فاکتور دیجیتال استاندارد + ارسال</td>
+      </tr>
+            
+      <!-- مدیریت محصول -->
+      <tr>
+        <th class="category-header" colspan="4">مدیریت محصول (برای فروشنده/ادمین)</th>
+      </tr>
+            
+      <tr>
+        <th>CRUD محصول (افزودن، ویرایش، حذف)</th>
+        <td data-label="مینی‌مال">فیلدهای پایه (عنوان، قیمت، موجودی، عکس)</td>
+        <td data-label="استاندارد">چند تصویر + ویژگی‌ها + SKU</td>
+        <td data-label="پریمیوم">مدیریت کامل + فیلدهای لازم</td>
+      </tr>
+            
+      <tr>
+        <th>مدیریت دسته‌بندی‌ها</th>
+        <td data-label="مینی‌مال">دسته‌بندی ساده</td>
+        <td data-label="استاندارد">دسته‌بندی سلسله‌مراتبی</td>
+        <td data-label="پریمیوم">دسته‌بندی کامل + ساختارمند</td>
+      </tr>
+            
+      <tr>
+        <th>مدیریت موجودی و قیمت</th>
+        <td data-label="مینی‌مال">بروزرسانی دستی</td>
+        <td data-label="استاندارد">مدیریت عددی + حالت‌های پایه</td>
+        <td data-label="پریمیوم">مدیریت دقیق + قابل ویرایش</td>
+      </tr>
+            
+      <tr>
+        <th>مدیریت سفارش‌ها (تایید، ارسال، لغو)</th>
+        <td data-label="مینی‌مال">تغییر وضعیت پایه</td>
+        <td data-label="استاندارد">فیلتر + یادداشت داخلی</td>
+        <td data-label="پریمیوم">مدیریت کامل + تغییر وضعیت</td>
+      </tr>
+            
+      <tr>
+        <th>گزارش فروش پایه</th>
+        <td data-label="مینی‌مال">لیست سفارش‌ها و جمع ساده</td>
+        <td data-label="استاندارد">فیلترهای زمانی + تعداد سفارش</td>
+        <td data-label="پریمیوم">گزارش مطابق لیست (لیست + جمع فروش)</td>
+      </tr>
+            
+      <!-- جستجو و فیلتر -->
+      <tr>
+        <th class="category-header" colspan="4">جستجو و فیلتر</th>
+      </tr>
+            
+      <tr>
+        <th>جستجوی محصول</th>
+        <td data-label="مینی‌مال">جستجوی متنی ساده</td>
+        <td data-label="استاندارد">نام + توضیحات + SKU</td>
+        <td data-label="پریمیوم">جستجوی کامل روی فیلدهای محصول</td>
+      </tr>
+            
+      <tr>
+        <th>فیلتر بر اساس دسته، قیمت، برند، موجودی</th>
+        <td data-label="مینی‌مال">فقط فیلتر دسته</td>
+        <td data-label="استاندارد">دسته + قیمت + برند + موجودی</td>
+        <td data-label="پریمیوم">فیلتر کامل (همه موارد لیست‌شده)</td>
+      </tr>
+            
+      <tr>
+        <th>مرتب‌سازی (جدیدترین، ارزان‌ترین، گران‌ترین، پرفروش‌ترین)</th>
+        <td data-label="مینی‌مال">جدیدترین، ارزان→گران، گران→ارزان</td>
+        <td data-label="استاندارد">تمامی گزینه‌های مرتب‌سازی</td>
+        <td data-label="پریمیوم">همه گزینه‌های مرتب‌سازی (همان لیست)</td>
+      </tr>
+            
+      <!-- اعلان‌ها -->
+      <tr>
+        <th class="category-header" colspan="4">اعلان‌ها</th>
+      </tr>
+            
+      <tr>
+        <th>ایمیل یا SMS تأیید ثبت سفارش</th>
+        <td data-label="مینی‌مال">فقط ایمیل تأیید</td>
+        <td data-label="استاندارد">ایمیل + SMS (در صورت فعال‌سازی)</td>
+        <td data-label="پریمیوم">ایمیل و/یا SMS (هر دو در دسترس)</td>
+      </tr>
+            
+      <tr>
+        <th>اعلان وضعیت سفارش (ارسال شد، لغو شد، …)</th>
+        <td data-label="مینی‌مال">اعلان وضعیت پایه (ایمیل)</td>
+        <td data-label="استاندارد">اعلان واضح (ایمیل/SMS)</td>
+        <td data-label="پریمیوم">اعلان وضعیت (ایمیل/SMS) طبق تغییر وضعیت</td>
+      </tr>
+            
+      <!-- قیمت‌گذاری -->
+      <tr class="price-row">
+        <th>قیمت</th>
+        <td data-label="مینی‌مال">30 - 40 ملیون تومان</td>
+        <td data-label="استاندارد">60 - 80 ملیون تومان</td>
+        <td data-label="پریمیوم">80 - 120 ملیون تومان</td>
+      </tr>
+      <tr>
+        <th>انتخاب پلن</th>
+        <td data-label="مینی‌مال"><a href="#" class="btn plan-1">انتخاب پلن</a></td>
+        <td data-label="استاندارد"><a href="#" class="btn plan-2">انتخاب پلن</a></td>
+        <td data-label="پریمیوم"><a href="#" class="btn plan-3">انتخاب پلن</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- بخش سئو -->
+  <h2 style="text-align: center; color: var(--primary); margin: 50px 0 30px 0; font-size: 1.8rem;">پلن‌های سئو (SEO)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>امکانات سئو</th>
+        <th>Basic (پایه)</th>
+        <th>Standard (میانی)</th>
+        <th>Advanced (حرفه‌ای)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="price-row">
+        <th>قیمت سئو</th>
+        <td data-label="Basic">15 - 30 میلیون تومان</td>
+        <td data-label="Standard">50 - 80 میلیون تومان</td>
+        <td data-label="Advanced">80 - 120 میلیون تومان</td>
+      </tr>
+      <tr>
+        <th>توضیحات</th>
+        <td data-label="Basic">URL تمیز، Meta اتوماتیک، هدینگ‌ها، Sitemap و robots، Alt تصاویر، gzip، canonical اولیه</td>
+        <td data-label="Standard">همه فیچرهای Basic + BreadCrumb، ویرایش متا، فشرده‌سازی پیشرفته، Schema محصولات، ریدایرکت‌ها، گزارش Crawl، مدیریت 404</td>
+        <td data-label="Advanced">همه فیچرها + CDN، WebP، اسکیما کامل، Hreflang، اتوماسیون محتوا، داشبورد مانیتورینگ، تحلیل لینک‌های شکسته پیشرفته</td>
+      </tr>
+      <tr>
+        <th>انتخاب پلن سئو</th>
+        <td data-label="Basic"><a href="#" class="btn plan-1">انتخاب پلن سئو</a></td>
+        <td data-label="Standard"><a href="#" class="btn plan-2">انتخاب پلن سئو</a></td>
+        <td data-label="Advanced"><a href="#" class="btn plan-3">انتخاب پلن سئو</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+    <div style="text-align: center; color: var(--gray); font-size: 0.9rem; margin-top: 30px;">
+      <p><strong>✨ تمامی پلن‌ها با بهترین کیفیت و استانداردهای حرفه‌ای ارائه می‌شوند ✨</strong></p>
+      <p>تمامی پلن‌ها شامل پشتیبانی فنی 1 ماهه و به‌روزرسانی‌های امنیتی می‌باشند</p>
+    </div>
+</body>
+</html>
